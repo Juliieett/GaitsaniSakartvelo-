@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Georgia Interactive Map</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="info-panel" id="info-panel">
+    <h2>GAITSANI SAKARTVELO - გაიცანი საქართველო
+    </h2>
+    <p>Welcome,click the region to find out more! </p>
+  </div>
+
+  <!-- Simplemaps scripts -->
+  <script src="mapdata.js"></script>
+  <script src="countrymap.js"></script>
+
+  <script>
+  // Region data: Add your descriptions and image URLs here
+  const regionData = {
+    GEAB: {
+      title: "Abkhazia",
+      content: "Beautiful Seaside Region of the country - currently occupied by Russia.",
+      image: "https://www.fodors.com/wp-content/uploads/2018/04/Abkhazia-Russian-Occupation-1-975x650.jpg"
+    },
+    GEAJ: {
+      title: "Ajaria",
+      content: "You want to spend your summer here, Trust me!",
+      image: "https://cdn.georgiantravelguide.com/storage/files/sarfi-khelvachauri-achara-sarpi-khelvachauri-adjara.jpg"
+    },
+    GEGU: {
+      title: "Guria",
+      content: "Known as the people who talk REALLY fast.",
+      image: "https://thumbs.dreamstime.com/b/expansive-aerial-view-over-gomis-mta-colorful-rooftops-homes-scattered-lush-green-hills-mystical-veil-morning-fog-323729494.jpg"
+    },
+    GEIM: {
+      title: "Imereti",
+      content: "The second heart of Georgia - Kutaisi.",
+      image: "https://cdn.georgiantravelguide.com/storage/files/imereti-kutaisi-kutaisi-kutaisi-2.jpg"
+    },
+    GEKA: {
+      title: "Kakheti",
+      content: "Wine here is just ANOTHER LEVEL.",
+      image: "https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/304997/2000x2000-0-70-5cbcd9d4438148030aad90ca44548215.jpg"
+    },
+    GEKK: {
+      title: "Kvemo Kartli",
+      content: "NAZUQI.",
+      image: "https://preview.qiantucdn.com/freepik/free-photo/52530675.jpg!w1024_new_small_1"
+    },
+    GEMM: {
+      title: "Mtskheta-Mtianeti",
+      content: "Mountain people - eat khinkali there and thank me later.",
+      image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/1-gergeti-trinity-church-at-sunrise-stepantsminda-mtskheta-mtianeti-georgia-cavan-images.jpg"
+    },
+    GERL: {
+      title: "Racha-Lechkhumi-Kvemo Svaneti",
+      content: "You don't want to mess with them (trust me).",
+      image: "https://media.istockphoto.com/id/1456642796/photo/tskhenistsqali-river-valley-landscape-in-racha-region-of-georgia-with-svaneti-mountain-range.jpg?s=612x612&w=0&k=20&c=8gyRhbZD7BvecqZxYcsJmAiPyB5_pv9TvN2bP3HTDmw="
+    },
+    GESJ: {
+      title: "Samtskhe-Javakheti",
+      content: "Rabati castle, Amazing Food, POTATOES.",
+      image: "https://georgiatoday.ge/wp-content/uploads/2023/06/Rabati.jpg"
+    },
+    GESK: {
+      title: "Shida Kartli",
+      content: "RUSSIA HATE.",
+      image: "https://cdn.georgiantravelguide.com/storage/files/gori-shida-kartli-gori-shida-kartli-2.jpg"
+    },
+    GESZ: {
+      title: "Samegrelo-Zemo Svaneti",
+      content: "MODEL BEAUTY PEOPLE, FOOD? ANOTHER LEVEL.",
+      image: "https://www.westend61.de/images/0000976879pw/europe-georgia-svaneti-samegrelo-zemo-svaneti-ushguli-village-FPF00171.jpg"
+    },
+    GETB: {
+      title: "Tbilisi",
+      content: "Capital city of Georgia.",
+      image: "https://globetrender.com/wp-content/uploads/2021/03/AdobeStock_234344431-scaled.jpeg"
+    }
+  };
+
+  // Hook into Simplemaps click event
+  simplemaps_countrymap.hooks.click_state = function(id){
+    renderRegion(id);
+  };
+
+  function renderRegion(id) {
+    const panel = document.getElementById("info-panel");
+    const data = regionData[id];
+
+    if (data) {
+      panel.innerHTML = `
+        <h2>${data.title}</h2>
+        <p>${data.content}</p>
+        ${data.image ? `<img src="${data.image}" alt="${data.title}">` : ""}
+      `;
+      panel.style.display = "block";
+    }
+  }
+
+  window.onload = () => {
+    document.getElementById("info-panel").style.display = "block";
+  };
+ 
+  </script>
+  
+</body>
+</html>
