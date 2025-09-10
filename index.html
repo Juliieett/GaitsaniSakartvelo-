@@ -19,69 +19,80 @@
   <script src="countrymap.js"></script>
 
   <script>
-  // Region data: Add your descriptions and image URLs here
-  const regionData = {
-    GEAB: {
-      title: "Abkhazia",
-      content: "Beautiful Seaside Region of the country - currently occupied by Russia.",
-      image: "https://www.fodors.com/wp-content/uploads/2018/04/Abkhazia-Russian-Occupation-1-975x650.jpg"
-    },
-    GEAJ: {
-      title: "Ajaria",
-      content: "You want to spend your summer here, Trust me!",
-      image: "https://cdn.georgiantravelguide.com/storage/files/sarfi-khelvachauri-achara-sarpi-khelvachauri-adjara.jpg"
-    },
-    GEGU: {
-      title: "Guria",
-      content: "Known as the people who talk REALLY fast.",
-      image: "https://thumbs.dreamstime.com/b/expansive-aerial-view-over-gomis-mta-colorful-rooftops-homes-scattered-lush-green-hills-mystical-veil-morning-fog-323729494.jpg"
-    },
-    GEIM: {
-      title: "Imereti",
-      content: "The second heart of Georgia - Kutaisi.",
-      image: "https://cdn.georgiantravelguide.com/storage/files/imereti-kutaisi-kutaisi-kutaisi-2.jpg"
-    },
-    GEKA: {
-      title: "Kakheti",
-      content: "Wine here is just ANOTHER LEVEL.",
-      image: "https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/304997/2000x2000-0-70-5cbcd9d4438148030aad90ca44548215.jpg"
-    },
-    GEKK: {
-      title: "Kvemo Kartli",
-      content: "NAZUQI.",
-      image: "https://preview.qiantucdn.com/freepik/free-photo/52530675.jpg!w1024_new_small_1"
-    },
-    GEMM: {
-      title: "Mtskheta-Mtianeti",
-      content: "Mountain people - eat khinkali there and thank me later.",
-      image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/1-gergeti-trinity-church-at-sunrise-stepantsminda-mtskheta-mtianeti-georgia-cavan-images.jpg"
-    },
-    GERL: {
-      title: "Racha-Lechkhumi-Kvemo Svaneti",
-      content: "You don't want to mess with them (trust me).",
-      image: "https://media.istockphoto.com/id/1456642796/photo/tskhenistsqali-river-valley-landscape-in-racha-region-of-georgia-with-svaneti-mountain-range.jpg?s=612x612&w=0&k=20&c=8gyRhbZD7BvecqZxYcsJmAiPyB5_pv9TvN2bP3HTDmw="
-    },
-    GESJ: {
-      title: "Samtskhe-Javakheti",
-      content: "Rabati castle, Amazing Food, POTATOES.",
-      image: "https://georgiatoday.ge/wp-content/uploads/2023/06/Rabati.jpg"
-    },
-    GESK: {
-      title: "Shida Kartli",
-      content: "RUSSIA HATE.",
-      image: "https://cdn.georgiantravelguide.com/storage/files/gori-shida-kartli-gori-shida-kartli-2.jpg"
-    },
-    GESZ: {
-      title: "Samegrelo-Zemo Svaneti",
-      content: "MODEL BEAUTY PEOPLE, FOOD? ANOTHER LEVEL.",
-      image: "https://www.westend61.de/images/0000976879pw/europe-georgia-svaneti-samegrelo-zemo-svaneti-ushguli-village-FPF00171.jpg"
-    },
-    GETB: {
-      title: "Tbilisi",
-      content: "Capital city of Georgia.",
-      image: "https://globetrender.com/wp-content/uploads/2021/03/AdobeStock_234344431-scaled.jpeg"
-    }
-  };
+const regionData = {
+  GEAB: {
+    title: "Abkhazia",
+    content: "Beautiful Seaside Region of the country - currently occupied by Russia.",
+    details: "Nestled between the Black Sea and the Caucasus Mountains, Abkhazia is known for its subtropical climate, tea plantations, and natural beauty. Lake Ritsa and New Athos Cave are highlights, while the coast offers warm beaches. Abkhaz cuisine features smoked cheeses, spicy sauces, and corn-based dishes.",
+    image: "https://www.fodors.com/wp-content/uploads/2018/04/Abkhazia-Russian-Occupation-1-975x650.jpg"
+  },
+  GEAJ: {
+    title: "Ajaria",
+    content: "You want to spend your summer here, Trust me!",
+    details: "Ajaria’s capital Batumi is one of Georgia’s most vibrant cities, combining seaside resorts, modern skyscrapers, and subtropical gardens. Beyond the city, the region is mountainous, with lush valleys and hiking trails. Its most iconic dish is Adjarian khachapuri, a boat-shaped bread filled with cheese, egg, and butter.",
+    image: "https://cdn.georgiantravelguide.com/storage/files/sarfi-khelvachauri-achara-sarpi-khelvachauri-adjara.jpg"
+  },
+  GEGU: {
+    title: "Guria",
+    content: "Known as the people who talk REALLY fast.",
+    details: "Called the “land of humor and song,” Guria is famous for its witty people and lightning-fast polyphonic singing. It’s a small but green region with tea plantations introduced during the 19th century. The Black Sea coast in Ureki is unique for its magnetic black sands, believed to have healing properties.",
+    image: "https://thumbs.dreamstime.com/b/expansive-aerial-view-over-gomis-mta-colorful-rooftops-homes-scattered-lush-green-hills-mystical-veil-morning-fog-323729494.jpg"
+  },
+  GEIM: {
+    title: "Imereti",
+    content: "The second heart of Georgia - Kutaisi.",
+    details: "One of Georgia’s most historic regions, Imereti was once home to ancient kingdoms. Kutaisi, its capital, is one of the oldest continuously inhabited cities in Europe and hosts UNESCO sites like Bagrati Cathedral and Gelati Monastery. The Sataplia caves and dinosaur footprints add natural wonders, while Imeretian khachapuri is the local favorite.",
+    image: "https://cdn.georgiantravelguide.com/storage/files/imereti-kutaisi-kutaisi-kutaisi-2.jpg"
+  },
+  GEKA: {
+    title: "Kakheti",
+    content: "Wine here is just ANOTHER LEVEL.",
+    details: "The heartland of Georgian winemaking, Kakheti is covered with vineyards and picturesque villages. The region is home to qvevri wine-making — clay pots buried underground — a UNESCO heritage tradition. The Alazani Valley, overlooked by the Caucasus mountains, is breathtaking. Sighnaghi, “the city of love,” is a hilltop town with cobbled streets and fortress walls.",
+    image: "https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/304997/2000x2000-0-70-5cbcd9d4438148030aad90ca44548215.jpg"
+  },
+  GEKK: {
+    title: "Kvemo Kartli",
+    content: "NAZUQI.",
+    details: "Known as Georgia’s industrial hub, Kvemo Kartli also preserves ancient history. The town of Dmanisi is where 1.8-million-year-old human fossils were discovered, making it a key site in anthropology. Bolnisi Sioni Cathedral is the oldest Christian church in Georgia. The region’s population is ethnically diverse, adding cultural variety.",
+    image: "https://preview.qiantucdn.com/freepik/free-photo/52530675.jpg!w1024_new_small_1"
+  },
+  GEMM: {
+    title: "Mtskheta-Mtianeti",
+    content: "Mountain people - eat khinkali there and thank me later.",
+    details: "Mtskheta, one of Georgia’s oldest towns, was once the capital and remains its spiritual center. Svetitskhoveli Cathedral and Jvari Monastery are UNESCO World Heritage sites. The northern part of the region rises into the Caucasus, with Gudauri ski resort and the dramatic Kazbegi mountains, where Gergeti Trinity Church sits at 2,170 m.",
+    image: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/1-gergeti-trinity-church-at-sunrise-stepantsminda-mtskheta-mtianeti-georgia-cavan-images.jpg"
+  },
+  GERL: {
+    title: "Racha-Lechkhumi-Kvemo Svaneti",
+    content: "You don't want to mess with them (trust me).",
+    details: "This remote mountainous region is often called “Georgian Switzerland” because of its alpine meadows, clear lakes, and wooden houses. Racha is especially known for Khvanchkara, a semi-sweet red wine enjoyed by Churchill. Shovi and Shaori Lake are popular for summer getaways, and the area has a reputation for peaceful, slow living.",
+    image: "https://media.istockphoto.com/id/1456642796/photo/tskhenistsqali-river-valley-landscape-in-racha-region-of-georgia-with-svaneti-mountain-range.jpg?s=612x612&w=0&k=20&c=8gyRhbZD7BvecqZxYcsJmAiPyB5_pv9TvN2bP3HTDmw="
+  },
+  GESJ: {
+    title: "Samtskhe-Javakheti",
+    content: "Rabati castle, Amazing Food, POTATOES.",
+    details: "A border region with diverse culture, Samtskhe-Javakheti is home to Vardzia, a cave city carved into rock in the 12th century by Queen Tamar. Lake Paravani, Georgia’s largest lake, lies here at high altitude. Armenian, Georgian, and Turkish influences blend in local traditions and cuisine.",
+    image: "https://georgiatoday.ge/wp-content/uploads/2023/06/Rabati.jpg"
+  },
+  GESK: {
+    title: "Shida Kartli",
+    content: "RUSSIA HATE.",
+    details: "Shida Kartli is fertile farmland and historically important territory. Gori, its capital, is known as Stalin’s birthplace and houses a museum about him. The Uplistsikhe cave city nearby is an ancient rock-hewn settlement dating back to the early Iron Age. Fruits, especially apples, are abundant here.",
+    image: "https://cdn.georgiantravelguide.com/storage/files/gori-shida-kartli-gori-shida-kartli-2.jpg"
+  },
+  GESZ: {
+    title: "Samegrelo-Zemo Svaneti",
+    content: "MODEL BEAUTY PEOPLE, FOOD? ANOTHER LEVEL.",
+    details: "Samegrelo is lush, subtropical, and known for spicy Megrelian dishes like Elarji (cornmeal with cheese). Zemo Svaneti, high in the Caucasus, is a land of ancient towers and glaciers. The town of Mestia and the remote village of Ushguli are UNESCO sites, preserving unique Svan culture, language, and traditions.",
+    image: "https://www.westend61.de/images/0000976879pw/europe-georgia-svaneti-samegrelo-zemo-svaneti-ushguli-village-FPF00171.jpg"
+  },
+  GETB: {
+    title: "Tbilisi",
+    content: "Capital city of Georgia.",
+    details: "Georgia’s bustling capital mixes old and new: historic bathhouses, narrow cobbled streets, colorful balconies, and modern glass bridges. The Narikala fortress overlooks the old town, while Rustaveli Avenue buzzes with theaters, cafés, and nightlife. Tbilisi is also famous for its multicultural atmosphere, blending Georgian, Persian, Russian, and European influences.",
+    image: "https://globetrender.com/wp-content/uploads/2021/03/AdobeStock_234344431-scaled.jpeg"
+  }
+};
 
   // Hook into Simplemaps click event
   simplemaps_countrymap.hooks.click_state = function(id){
@@ -89,18 +100,20 @@
   };
 
   function renderRegion(id) {
-    const panel = document.getElementById("info-panel");
-    const data = regionData[id];
+  const panel = document.getElementById("info-panel");
+  const data = regionData[id];
+  const mapDesc = simplemaps_countrymap_mapdata.state_specific[id]?.description;
 
-    if (data) {
-      panel.innerHTML = `
-        <h2>${data.title}</h2>
-        <p>${data.content}</p>
-        ${data.image ? `<img src="${data.image}" alt="${data.title}">` : ""}
-      `;
-      panel.style.display = "block";
-    }
+  if (data) {
+    panel.innerHTML = `
+      <h2>${data.title}</h2>
+      <p><strong>Map Description:</strong> ${mapDesc || ""}</p>
+      <p style="margin-top:10px;">${data.details}</p>
+      ${data.image ? `<img src="${data.image}" alt="${data.title}">` : ""}
+    `;
+    panel.style.display = "block";
   }
+}
 
   window.onload = () => {
     document.getElementById("info-panel").style.display = "block";
